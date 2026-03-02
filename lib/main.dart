@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  var Firebase;
-  await Firebase.initializeApp();
+import 'login_page.dart';
+void main() {
+  
   runApp(MyApp());
 }
 
@@ -13,19 +11,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: MyHomePage(),
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
   
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _MyHomePageState extends State<MyHomePage> {
   int counter = 0;
 
   void incrementCounter() {
@@ -94,7 +92,7 @@ void decrementCounter() {
             child: Icon(Icons.remove),
           ),SizedBox(height: 10,),FloatingActionButton(
             onPressed: () =>
-              Navigator.push(context, MaterialPageRoute(builder: (_)=>LoginPage())),
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> LoginPage())),
               child: Icon(Icons.next_plan),
           ),
         ]),
