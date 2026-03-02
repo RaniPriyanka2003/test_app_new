@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class Registration extends StatefulWidget {
@@ -15,11 +17,11 @@ class _RegistrationState extends State<Registration> {
   bool isOtherSelected = false;
 
   void submitForm() {
-    print("Gender: $selectedGender");
-    print("Qualification: $selectedQalification");
-    print("Dance: $isDanceSelected");
-    print("Music: $isMusicSelected");
-    print("Other: $isOtherSelected");
+    log("Gender: $selectedGender");
+    log("Qualification: $selectedQalification");
+    log("Dance: $isDanceSelected");
+    log("Music: $isMusicSelected");
+    log("Other: $isOtherSelected");
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
