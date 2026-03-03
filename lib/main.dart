@@ -26,16 +26,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int counter = 0;
 
-  void incrementCounter() {
-    setState(() {
-      counter++;
-    });
-  }
-void decrementCounter() {
-    setState(() {
-      counter--;
-    });
-  }
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,20 +74,15 @@ void decrementCounter() {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            onPressed: incrementCounter,
-            child: Icon(Icons.add),
-          ),
-          SizedBox(height: 10,),
-          FloatingActionButton(
-            onPressed: decrementCounter,
-            child: Icon(Icons.remove),
-          ),SizedBox(height: 10,),FloatingActionButton(
+        FloatingActionButton(
             onPressed: () =>
               Navigator.push(context, MaterialPageRoute(builder: (_)=> LoginPage())),
               child: Icon(Icons.next_plan),
-          ),
-        ]),
-    );
+          ),]
+      )
+        );
   }
 }
+
+
+
