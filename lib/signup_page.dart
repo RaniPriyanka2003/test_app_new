@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/gridview.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -48,7 +49,6 @@ class _SignupPageState extends State<SignupPage> {
 
             const SizedBox(height: 30),
 
-            /// 🔷 SINGLE CONTAINER WITH ALL FIELDS
             Form(
               key: _formKey,
               child: Container(
@@ -240,12 +240,12 @@ SizedBox(height: 20,),
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const SignupPage(),
+                    builder: (_) => const StatsDashboard(),
                   ),
                 );
               },
               child:
-               const Text("Don't have an account? Logi"),
+               const Text("Don't have an account? Login"),
             ),
           ],
         ),

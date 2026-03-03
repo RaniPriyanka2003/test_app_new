@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             /// 🔵 Circle Avatar
             const CircleAvatar(
               radius: 50,
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.yellow,
               child: Icon(
                 Icons.person,
                 size: 60,
