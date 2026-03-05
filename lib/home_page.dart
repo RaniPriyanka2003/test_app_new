@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/email.dart';
+import 'package:flutter_application_1/facebook.dart';
+import 'package:flutter_application_1/google.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   
   Widget build(BuildContext context) {
@@ -42,10 +47,11 @@ class LoginOptionsPage extends StatelessWidget {
           
           
               ListTile(
-                leading: const Icon(Icons.g_mobiledata, color: Colors.red),
+                leading: const Icon(Icons.g_mobiledata, color: Colors.grey),
                 title: const Text("Continue with Google"),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Googlepage()),);
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
@@ -61,6 +67,7 @@ class LoginOptionsPage extends StatelessWidget {
                 title: const Text("Continue with Facebook"),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Facebookpage()),);
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
@@ -71,10 +78,11 @@ class LoginOptionsPage extends StatelessWidget {
               ),
 
               ListTile(
-                leading: const Icon(Icons.email, color: Colors.green),
+                leading: const Icon(Icons.email, color: Colors.grey),
                 title: const Text("Continue with Email"),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Emailpage()),);
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
