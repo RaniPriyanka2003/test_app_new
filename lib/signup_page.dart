@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/gridview.dart';
+import 'package:test_app/login_page.dart';
+
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -240,7 +241,7 @@ SizedBox(height: 20,),
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const StatsDashboard(),
+                    builder: (_) => const LoginPage(),
                   ),
                 );
               },

@@ -1,88 +1,63 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
+import 'stats_page.dart';
+import 'rewards_page.dart';
+import 'goal_page.dart';
+import 'google.dart';
+import 'facebook.dart';
+import 'email.dart';
 
-import 'login_page.dart';
 void main() {
-  
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int currentIndex = 0;
+
+  final List<Widget> pages = [
+    HomePage(),
+    StatsPage(),
+    RewardsPage(),
+    GoalPage(),
+    Googlepage(),
+    Facebookpage(),
+    Emailpage()
+    
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-  
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int counter = 0;
-
-  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter LoginPage Demo"),
-        actions: [
-          Padding(
-            padding: EdgeInsets.all(12),
-            child: Badge(
-              label: Text(counter.toString()),
-              isLabelVisible: counter > 0,
-              child: Icon(Icons.notifications),
+      home: Scaffold(
+        body: pages[currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndex,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.blue,
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bar_chart),
+              label: "Stats",
             ),
-          )
-        ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-
-            Text(
-              "Counter Value:",
-              style: TextStyle(fontSize: 20),
-            ),
-
-            SizedBox(height: 10),
-
-            Text(
-              counter.toString(),
-              style: TextStyle(fontSize: 32),
-            ),
-
-            SizedBox(height: 30),
-
-            Badge(
-              label: Text(counter.toString()),
-              isLabelVisible: counter > 0,
-              child: Icon(Icons.shopping_cart, size: 50),
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.star), label: "Rewards"),
+            BottomNavigationBarItem(icon: Icon(Icons.flag), label: "Goal"),
           ],
         ),
       ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-        FloatingActionButton(
-            onPressed: () =>
-              Navigator.push(context, MaterialPageRoute(builder: (_)=> LoginPage())),
-              child: Icon(Icons.next_plan),
-          ),]
-      )
-        );
+    );
   }
 }
-
-
-
