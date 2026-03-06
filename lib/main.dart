@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/responsivelayout.dart';
 import 'home_page.dart';
 import 'showdailouge.dart';
 import 'stats_page.dart';
@@ -37,7 +38,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
-    );
+      home: ResponsiveScreen(),);
+    
   }
 }
